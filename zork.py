@@ -5,7 +5,7 @@ import subprocess
 import time
 import zipfile
 
-from mycroft.util.log import LOG
+from ovos_utils.log import LOG
 
 
 class ZorkInterpreter:
