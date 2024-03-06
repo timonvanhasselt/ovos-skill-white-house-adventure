@@ -1,14 +1,16 @@
 from os.path import join, exists
 
-from adapt.intent import IntentBuilder
-from mycroft.skills.core import MycroftSkill, intent_handler
+from ovos_workshop.decorators import intent_handler
+from ovos_workshop.intents import IntentBuilder
+from ovos_workshop.skills import OVOSSkill
 
 from .zork import ZorkInterpreter, install_zork_data
 
 
-class ZorkSkill(MycroftSkill):
-    def __init__(self):
-        super(ZorkSkill, self).__init__()
+class ZorkSkill(OVOSSkill):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.room = None
         self.playing = False
         self.zork = None
@@ -27,8 +29,7 @@ class ZorkSkill(MycroftSkill):
         Converse then handles the actual gameplay.
         """
         if not self.zork:
-            self.zork = ZorkInterpreter(self.interpreter,
-                                        self.data,
+            self.zork = ZorkInterpreter(self.interpreter, self.data,
                                         self.save_file)
         # Issue look command to get initial description
         self.zork.cmd('look')
@@ -64,8 +65,9 @@ class ZorkSkill(MycroftSkill):
                         return True
         return False
 
-    @intent_handler(IntentBuilder('DeleteSave').require('Delete')
-                    .require('Zork').require('Save'))
+    @intent_handler(
+        IntentBuilder('DeleteSave').require('Delete').require('Zork').require(
+            'Save'))
     def delete_save(self, Message):
         if self.zork.delete_save():
             self.speak_dialog('SaveDeleted')
@@ -76,7 +78,3 @@ class ZorkSkill(MycroftSkill):
         """Stop playing."""
         if self.playing:
             self.leave_zork()
-
-
-def create_skill():
-    return ZorkSkill()
