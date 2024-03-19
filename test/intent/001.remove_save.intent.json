@@ -1,9 +1,0 @@
-{
-  "utterance": "delete the zork save game",
-  "intent_type": "DeleteSave",
-  "intent": {
-    "Zork": "zork",
-    "Delete": "delete"
-  },
-  "expected_dialog": "NoSave"
-}

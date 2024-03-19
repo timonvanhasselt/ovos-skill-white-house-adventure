@@ -2,6 +2,7 @@
 from setuptools import setup
 from os.path import abspath, dirname, join, isfile, isdir
 from os import walk
+import os
 
 # Define package information
 SKILL_CLAZZ = "ZorkSkill"  # Make sure it matches __init__.py class name
@@ -10,7 +11,7 @@ URL = "https://github.com/OVOSHatchery/ovos-skill-white-house-adventure"
 AUTHOR = "forslund"
 EMAIL = ""
 LICENSE = "GPLv3"
-DESCRIPTION = SKILL_CLAZZ # TODO
+DESCRIPTION = "Zork interactive fiction game skill"
 
 PYPI_NAME = URL.split("/")[-1]  # pip install PYPI_NAME
 
@@ -36,7 +37,7 @@ def get_requirements(requirements_filename: str = "requirements.txt"):
 
 # Function to find resource files
 def find_resource_files():
-    resource_base_dirs = ("locale", "ui", "vocab", "dialog", "regex", "res", "frotz)
+    resource_base_dirs = ("locale", "ui", "vocab", "locale", "regex", "res", "frotz")
     base_dir = abspath(dirname(__file__))
     package_data = ["*.json"]
     for res in resource_base_dirs:
@@ -60,7 +61,7 @@ setup(
     package_data={SKILL_PKG: find_resource_files()},
     packages=[SKILL_PKG],
     include_package_data=True,
-    install_requires=get_requirements(),
+    install_requires=get_requirements("requirements.txt"),
     keywords='ovos skill plugin',
     entry_points={'ovos.plugin.skill': PLUGIN_ENTRY_POINT}
 )
