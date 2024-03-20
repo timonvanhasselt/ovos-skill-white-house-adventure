@@ -1,0 +1,23 @@
+{
+  "skill_id": "ovos-skill-white-house-adventure.forslund",
+  "source": "https://github.com/JarbasSkills/ovos-skill-white-house-adventure",
+  "package_name": "ovos-skill-white-house-adventure",
+  "extra_plugins": {
+    "core": [],
+    "PHAL": [],
+    "listener": [],
+    "audio": [],
+    "media": [],
+    "gui": []
+  },
+  "icon": "http://infocom.elsewhere.org/gallery/zork1/zork1.jpg",
+  "images": [],
+  "name": "Zork",
+  "description": "Explore the white house, the forest surrounding it and the hidden kingdom below it.",
+  "examples": [
+    "play zork",
+    "save game",
+    "exit game"
+  ],
+  "tags": ["game", "adventure", "entertainment"]
+}
