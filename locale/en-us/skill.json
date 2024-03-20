@@ -1,6 +1,6 @@
 {
   "skill_id": "ovos-skill-white-house-adventure.forslund",
-  "source": "https://github.com/JarbasSkills/ovos-skill-white-house-adventure",
+  "source": "https://github.com/OVOSHatchery/ovos-skill-white-house-adventure",
   "package_name": "ovos-skill-white-house-adventure",
   "extra_plugins": {
     "core": [],
