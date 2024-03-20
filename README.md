@@ -21,7 +21,7 @@ The skill utilizes the excellent Frotz (http://frotz.sourceforge.net/) Z-Machine
 
 ## License and Source code
 
-The source code for starcross can be found [here](https://github.com/historicalsource/zork1).  It is not considered to be under an open license.
+The source code can be found [here](https://github.com/historicalsource/zork1).  It is not considered to be under an open license.
 
 As far as I know, Activision have still not declared the games abandonware. 
 
